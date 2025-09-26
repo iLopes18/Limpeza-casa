@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Limpeza</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" min-h-screen font-inter">
+
+<!-- Toast Notification Container -->
+<div id="toast-container" class="fixed top-4 right-4 z-[100] space-y-2"></div>
+
+<!-- Navbar -->
+<header class="shadow-md sticky top-0 z-10">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-center space-x-4 md:space-x-8">
+        <button class="nav-btn transition duration-200" data-section="main-section">Principal</button>
+        <button class="nav-btn transition duration-200" data-section="calendar-section">Calendário</button>
+        <button class="nav-btn transition duration-200" data-section="config-section">Configuração</button>
+    </nav>
+</header>
+
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Main Section -->
+    <section id="main-section" class="section">
+        <h1 class="page-title">Tarefas da Semana</h1>
+        <div id="week-nav" class="week-nav justify-center items-center mb-8 gap-4"></div>
+        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- Config Section -->
+    <section id="config-section" class="section hidden">
+        <h1 class="page-title">Configuração</h1>
+
+        <div class="card p-6 mb-8">
+            <h2 class="card-title">Nomes dos Quartos</h2>
+            <div id="config-users" class="space-y-3 mb-6"></div>
+            <button id="save-users" class="action-btn-primary w-full md:w-auto px-6 py-3">Guardar Nomes</button>
+        </div>
+
+        <div class="card p-6">
+            <h2 class="card-title">Divisões e Tarefas</h2>
+            <div id="divisions-config" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Cards de cada divisão criados dinamicamente via JS -->
+            </div>
+            <button id="save-config" class="action-btn-primary w-full md:w-auto px-6 py-3 mt-6">Guardar Alterações</button>
+        </div>
+    </section>
+
+    <!-- Calendário Section -->
+    <section id="calendar-section" class="section hidden">
+        <h1 class="page-title">Calendário de Rotação</h1>
+        <div class="card p-4 overflow-x-auto">
+            <div id="calendar-table" class="min-w-full"></div>
+        </div>
+    </section>
+
+</main>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* Paleta de Cores Profissional e Moderna */
+:root {
+  --color-primary-base: #457B9D; /* Azul Principal */
+  --color-primary-dark: #1D3557;
+  --color-accent-light: #A8DADC; /* Fundo Suave */
+  --color-success: #10B981;
+  --color-alert: #EF4444;
+  --color-text-dark: #1F2937;
+  --color-text-light: #F3F4F6;
+  --color-card-bg: #FFFFFF;
+  --color-gray-soft: #f9fafb;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Assumindo uma fonte moderna */
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-l);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--color-primary-dark);
+}
+
+/* Botões de Navegação (Navbar) */
+.nav-btn {
+  color: var(--color-text-light);
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+.nav-btn:hover {
+  color: var(--color-primary-base);
+}
+.nav-btn.active {
+  color: var(--color-primary-base);
+  border-bottom: 3px solid var(--color-primary-base);
+  background-color: transparent;
+}
+
+/* Cartões (Cards) na Secção Principal e Configuração */
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: 1rem; /* Mais arredondado */
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03); /* Sombra mais suave */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #E5E7EB; /* Borda subtil */
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Barra de Progresso */
+.progress-bar {
+  background-color: #E5E7EB;
+  height: 0.75rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--color-success);
+  width: 0%;
+  transition: width 0.4s ease-out; /* Transição mais suave */
+}
+
+/* Elementos de Formulário e Select */
+input[type="text"], select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus, select:focus {
+  border-color: var(--color-primary-base);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+select {
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+select.todo { background-color: #FEE2E2; color: var(--color-alert); } /* Vermelho Suave */
+select.in_progress { background-color: #FEF3C7; color: #F59E0B; } /* Amarelo Suave */
+select.done { background-color: #D1FAE5; color: var(--color-success); } /* Verde Suave */
+
+/* Estilos para Botões de Ação */
+button {
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.action-btn-primary {
+  background-color: var(--color-primary-base);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+.action-btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+button.save { background-color: var(--color-success); color: white; }
+button.save:hover { background-color: #059669; }
+
+button.cancel { background-color: #9CA3AF; color: white; } /* Cinzento para cancelar */
+button.cancel:hover { background-color: #6B7280; }
+
+/* Estilo para a Tabela do Calendário */
+#calendar-table table {
+  width: 100%;
+  text-align: left;
+}
+#calendar-table thead tr {
+  background-color: var(--color-primary-base);
+  color: white;
+}
+#calendar-table th, #calendar-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #E5E7EB;
+  white-space: nowrap;
+}
+#calendar-table tbody tr:nth-child(even) {
+  background-color: #F3F4F6;
+}
+#calendar-table tbody tr:hover {
+  background-color: var(--color-accent-light);
+}
+
+/* Estilo para o modal (em JS) */
+.modal-content {
+    background-color: var(--color-card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.page-title {
+  font-size: 2rem; /* tamanho maior */
+  font-weight: 800;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #E5E7EB;
+  padding-bottom: 0.5rem;
+}
