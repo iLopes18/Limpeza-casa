@@ -20,12 +20,12 @@ const db = getFirestore(app);
 // -------------------- Sequências --------------------
 const wcSuperiorSequence = [1, 2, 1, 2, 3];
 const wcInferiorSequence = [5, 4, 3, 5, 4];
-const cozinhaSequence 	 = [3, 5, 4, 1, 2];
-const salaSequence 	 	= [4, 1, 2, 3, 5];
-const corredorSequence 	= [2, 3, 5, 4, 1];
+const cozinhaSequence 	 = [2, 3, 5, 4, 1];
+const salaSequence 	 	= [3, 5, 4, 1, 2];
+const corredorSequence 	= [4, 1, 2, 3, 5];
 
 // -------------------- Datas --------------------
-const calendarStart = new Date(2025, 8, 1); // 8/09/2025
+const calendarStart = new Date(2025, 8, 8); // 8/09/2025
 const calendarEnd 	= new Date(2026, 6, 31); // 31/07/2026
 let currentDate = new Date(); // inicia na data atual
 if (currentDate < calendarStart) currentDate = new Date(calendarStart);
@@ -468,3 +468,4 @@ document.querySelectorAll(".nav-btn").forEach(btn=>{
   console.log("Aplicação inicializada.");
 
 })();
+
