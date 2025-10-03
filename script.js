@@ -104,23 +104,26 @@ function renderWeekNavigation() {
   const endDate = new Date(currentDate); 
   endDate.setDate(endDate.getDate() + 6); // Fim da semana (6 dias depois)
 
-  const prev = document.createElement("button");
-  prev.textContent = "« Semana Anterior";
-  prev.className = "px-4 py-2 text-sm font-bold rounded-lg bg-white border border-gray-300 hover:bg-gray-100 transition duration-200";
-  prev.addEventListener("click", () => {
-    currentDate.setDate(currentDate.getDate() - 7);
-    if (currentDate < calendarStart) currentDate = new Date(calendarStart); // Limite inferior
-    renderCards();
-  });
-  
-  const next = document.createElement("button");
-  next.textContent = "Próxima Semana »";
-  next.className = "px-4 py-2 text-sm font-bold rounded-lg bg-white border border-gray-300 hover:bg-gray-100 transition duration-200";
-  next.addEventListener("click", () => {
-    currentDate.setDate(currentDate.getDate() + 7);
-    if (currentDate > calendarEnd) currentDate.setDate(calendarEnd.getDate() - 6); // Limite superior (volta para a última semana válida)
-    renderCards();
-  });
+ const prev = document.createElement("button");
+prev.innerHTML = "&#8592;"; // ← seta esquerda
+prev.className = "px-3 py-2 text-lg font-bold rounded-full bg-transparent text-white hover:bg-gray-700 transition duration-200";
+prev.addEventListener("click", () => {
+  currentDate.setDate(currentDate.getDate() - 7);
+  if (currentDate < calendarStart) currentDate = new Date(calendarStart);
+  renderCards();
+});
+
+const next = document.createElement("button");
+next.innerHTML = "&#8594;"; // → seta direita
+next.className = "px-3 py-2 text-lg font-bold rounded-full bg-transparent text-white hover:bg-gray-700 transition duration-200";
+next.addEventListener("click", () => {
+  currentDate.setDate(currentDate.getDate() + 7);
+  if (currentDate > calendarEnd) {
+    currentDate = new Date(calendarEnd);
+    currentDate.setDate(currentDate.getDate() - 6);
+  }
+  renderCards();
+});
   
     const span = document.createElement("span");
     span.className = "text-xl font-extrabold mx-4 whitespace-nowrap";
@@ -468,4 +471,5 @@ document.querySelectorAll(".nav-btn").forEach(btn=>{
   console.log("Aplicação inicializada.");
 
 })();
+
 
