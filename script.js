@@ -25,7 +25,7 @@ const salaSequence 	 	= [4, 1, 2, 3, 5];
 const corredorSequence 	= [2, 3, 5, 4, 1];
 
 // -------------------- Datas --------------------
-const calendarStart = new Date(2025, 8, 8); // 8/09/2025
+const calendarStart = new Date(2025, 8, 1); // 8/09/2025
 const calendarEnd 	= new Date(2026, 6, 31); // 31/07/2026
 let currentDate = new Date(); // inicia na data atual
 if (currentDate < calendarStart) currentDate = new Date(calendarStart);
@@ -466,4 +466,5 @@ document.querySelectorAll(".nav-btn").forEach(btn=>{
   renderCards(); // O 'main-section' é o padrão
   
   console.log("Aplicação inicializada.");
+
 })();
